@@ -12,6 +12,10 @@ function writePassword() {
 
 function generatePassword(){
   var length = prompt("Between 8 and 128, how long do you want your password?");
+  if (length > 128 || length < 8 || isNaN(length)){
+    alert("Please input a valid number between 8 and 128.")
+    return "Try Again"
+  }
   var upperCase = confirm("Would you like uppercase letters?");
   var numbers = confirm("Would you like numerical values?");
   var specialCharacters = confirm("Would you like special characters?");
