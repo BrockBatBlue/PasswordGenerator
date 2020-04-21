@@ -12,9 +12,9 @@ function writePassword() {
 
 function generatePassword(){
   var length = prompt("Between 8 and 128, how long do you want your password?");
-  var upperCase = prompt("Would you like uppercase letters, y or n?");
-  var numbers = prompt("Would you like numerical values, y or n?");
-  var specialCharacters = prompt("Would you like special characters, y or n?");
+  var upperCase = confirm("Would you like uppercase letters?");
+  var numbers = confirm("Would you like numerical values?");
+  var specialCharacters = confirm("Would you like special characters?");
 
   var letterArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
   var upperLetterArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
@@ -24,13 +24,13 @@ function generatePassword(){
   var allArrays = [letterArray]
   var generatedPassword = ""
 
-  if (upperCase === 'y') {
+  if (upperCase === true) {
     allArrays.push(upperLetterArray)
   }
-  if (numbers === 'y') {
+  if (numbers === true) {
     allArrays.push(numberArray)
   }
-  if (specialCharacters === 'y') {
+  if (specialCharacters === true) {
     allArrays.push(specialArray)
   }
   
