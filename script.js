@@ -22,6 +22,7 @@ function generatePassword(){
   var specialArray = ["!",'"',"#","$","%","&","'","(",")","*","+",",",".","/",":",";","<",">","?","[","]","^","_","`","{","}","~","|"]
   
   var allArrays = [letterArray]
+  var generatedPassword = ""
 
   if (upperCase === 'y') {
     allArrays.push(upperLetterArray)
@@ -40,10 +41,12 @@ function generatePassword(){
     //Generate random number between 0 and the length of the random array chosen above
     var characterIndex=Math.floor(Math.random()*allArrays[typeIndex].length)
 
-    console.log(allArrays[typeIndex][characterIndex])
+    generatedPassword = generatedPassword+allArrays[typeIndex][characterIndex]
+    console.log(generatedPassword)
+
   }
-  //return generatedPassword
-  console.log(allArrays) 
+
+  return generatedPassword
 }
 
 // Add event listener to generate button
