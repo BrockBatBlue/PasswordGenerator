@@ -16,12 +16,25 @@ function generatePassword(){
   var numbers = prompt("Would you like numerical values, y or n?");
   var specialCharacters = prompt("Would you like special characters, y or n?");
   var letterArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+  var upperLetterArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
   var numberArray = [0,1,2,3,4,5,6,7,8,9]
   var specialArray = ["!",'"',"#","$","%","&","'","(",")","*","+",",",".","/",":",";","<",">","?","[","]","^","_","`","{","}","~","|"]
-  for(var i = 0; i< length; i++){
-
+  var allArrays = [letterArray]
+  if (upperCase === 'y') {
+    allArrays.push(upperLetterArray)
   }
-  return generatedPassword 
+  if (numbers === 'y') {
+    allArrays.push(numberArray)
+  }
+  if (specialCharacters === 'y') {
+    allArrays.push(specialArray)
+  }
+  
+  for(var i = 0; i< length; i++){
+    Math.floor(Math.random()*allArrays.length)    
+  }
+  //return generatedPassword
+  console.log(allArrays) 
 }
 
 // Add event listener to generate button
