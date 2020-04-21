@@ -15,11 +15,14 @@ function generatePassword(){
   var upperCase = prompt("Would you like uppercase letters, y or n?");
   var numbers = prompt("Would you like numerical values, y or n?");
   var specialCharacters = prompt("Would you like special characters, y or n?");
+
   var letterArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
   var upperLetterArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
   var numberArray = [0,1,2,3,4,5,6,7,8,9]
   var specialArray = ["!",'"',"#","$","%","&","'","(",")","*","+",",",".","/",":",";","<",">","?","[","]","^","_","`","{","}","~","|"]
+  
   var allArrays = [letterArray]
+
   if (upperCase === 'y') {
     allArrays.push(upperLetterArray)
   }
@@ -31,7 +34,13 @@ function generatePassword(){
   }
   
   for(var i = 0; i< length; i++){
-    Math.floor(Math.random()*allArrays.length)    
+    //Generate random number between 0 and the number of Arrays
+    var typeIndex=Math.floor(Math.random()*allArrays.length)
+
+    //Generate random number between 0 and the length of the random array chosen above
+    var characterIndex=Math.floor(Math.random()*allArrays[typeIndex].length)
+
+    console.log(allArrays[typeIndex][characterIndex])
   }
   //return generatedPassword
   console.log(allArrays) 
