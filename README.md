@@ -1,4 +1,4 @@
-# Homework Three: Password Generator
+#  Password Generator
 
 This is a password generator that prompts you to answer these questions:
 Between 8 and 128, how long do you want your password?
